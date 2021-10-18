@@ -1,12 +1,8 @@
-//added access token
-//let url = "https://api-v3.mbta.com/vehicles?filter[route]="+ document.getElementById("select-element").value;
-
 mapboxgl.accessToken = 'pk.eyJ1IjoiY29ubGV5d2lsbGlhbTAwMSIsImEiOiJja3VzdzFrY28zbmFvMm9vZmkwNzgyYWcxIn0.mjgxTjNrcX-MbJEsLxoenQ';
 
 //gloabl variable to allow setting the routes to view on the map
 let routeID = document.getElementById("select-element").value;
 let    url = "https://api-v3.mbta.com/vehicles?filter[route]="+ routeID;
-
 
 //global map variable to display Boston
 let map = new mapboxgl.Map({
@@ -15,7 +11,6 @@ let map = new mapboxgl.Map({
         center: [-71.131663,42.352152],
         zoom: 12
     });
-
 
 //global variable to track reatedmarkers 
 let markers = [];
@@ -36,6 +31,35 @@ async function getBusLocations(){
     const json     = await response.json();
     return json.data;
 }
+
+// Request alert data from MBTA
+async function getAlerts(){
+    let routeID = document.getElementById("select-element").value;
+    let    url = "https://api-v3.mbta.com/alerts?filter[route]="+ routeID;
+    const response = await fetch(url);
+    const json     = await response.json();
+    return json.data;
+}
+
+// Display alerts
+async function displayAlerts(){
+    const routeAlerts = await getAlerts();
+    
+    let banner = document.getElementById("alert");
+    if (routeAlerts.length !== null && routeAlerts.length !== null) 
+    {
+        let msg = "";
+        for(let i = 0; i < routeAlerts.length; i++) 
+        {
+            msg  += `${routeAlerts[i].attributes.header}       `;
+        }
+        banner.innerHTML=  `${msg}`;
+        banner.style.display="block";
+    } 
+    else banner.style.display = "none";
+}   
+
+//Update or Display markers
 async function upDateMarkers(){
     // get bus data
    const locations = await getBusLocations();
@@ -50,16 +74,20 @@ async function upDateMarkers(){
     if(locations.length !== null){
         //#2 added for loop to run function to add markers
         for(let i = 0; i < locations.length; i++){
+            
             // variables for marker lat and long
             let latitude = locations[i].attributes.latitude;
             let longitude = locations[i].attributes.longitude;
+            
             // variables to add to pop up messages
             let currentStatus = locations[i].attributes.current_status;
             currentStatus = currentStatus.toLowerCase();
             currentStatus = currentStatus.replaceAll('_', ' ');
             let msg = `Route ${locations[i].relationships.route.data.id} Bus ${locations[i].attributes.label} ${currentStatus} Stop ${locations[i].attributes.current_stop_sequence}`;
+           
             //setting default color
             let markerColor = customColor.Default;
+            
             //setting marker color variable based on route
             if(locations[i].relationships.route.data.id ==="Orange"){
                 markerColor = customColor.Orange;
@@ -73,10 +101,13 @@ async function upDateMarkers(){
             else {
                 markerColor = customColor.Default;
             }
+            
             //creating marker with custom color
             let marker = new mapboxgl.Marker({color: markerColor});
+           
             //adding marker to array 
             markers.push(marker);
+           
             //setting marker array element attributes
             markers[i].setLngLat([longitude,latitude]);
             markers[i].setPopup(new mapboxgl.Popup().setText(msg));
@@ -86,10 +117,10 @@ async function upDateMarkers(){
 }
 
 async function run(){
-   
-    upDateMarkers();
-   // timer
-   setTimeout(run, 15000);
+        upDateMarkers();
+        displayAlerts();
+        // timer
+        setTimeout(run, 15000);
 }
 
 run();
