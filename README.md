@@ -8,29 +8,31 @@
 <h2>Features</h2>
 <ol>
 <li>A selector switch between the views between four different bus routes</li>
-<li>Pop up messages with bus information added to each bus marker. (Click on the marker to open or close mesage box)</li>
-<li>Custom colors were added for the markers of each bus route</li>
-<li>Created an array and associated methods to keep track of current markers and provide for changing bus routes.</li>
+<li>Pop up messages with bus information added to each bus marker. (Clicking on the marker opens mesage box)</li>
+<li>Custom colors were added to differentiate each bus route</li>
+<li>Added an Alert banner towards bottom of Map for messages</li>
 </ol>
 <h2>How to Use</h2>
 <ol>
-<li>Copy or clone the Index, JS, and Style files to a folder on your PC</li>
-<li>Open the index file with your browser</li>
-<li>When prompted enter the number of pairs of Balls you want created or select cancel</li>
-<li>Double click your mouse in the browser window for each pair of balls you want created</li>
-<li>Refresh the browser window to start over</li>
-<li>Close your Browser window when finished</li>
+<li>Fork a Copy of this project to your Github page</li>
+<li>Clone a copy from your Github page to your local work environment</li>
+<li>Create an account at MapBox using this link <a href="https://www.mapbox.com/maps">MapBox</a> </li>
+<li>use this link to open an account or retrieve a token there to use without an account<a href="https://api-v3.mbta.com/">Massachusetts Bay Transportation Authority (MBTA)</a></li>
+<li>Past your two keys in the proper locations in the script file</li>
+<li>Open the index file using a browser</li>
+<li>Select from one of four routes from the selectormenu on the top left side of the web page</li>
+ <li>Watch the alerts and markers change in real time</li>
 </ol>
 <h2>Roadmap</h2>
-<p>Exploring ideas for additional features such as the ability to choose additional routes</p>
+<p>Exploring ideas for additional features such as the ability to choose additional routes and map controls</p>
 <h2>Contributors</h2>
 <ul>
   <li>Bill Conley</li>
-  <li>John Williams</li>
+  <li>Dr. Abel Sanchez</li>
  </ul>
 <h2>License</h2>
   <p>MIT License</p>
-  <p>Copyright (c) 2020 John Williams</p>
+  <p>Copyright (c) 2021 Bill Conley</p>
   <p>Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
 in the Software without restriction, including without limitation the rights
