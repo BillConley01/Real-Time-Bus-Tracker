@@ -12,16 +12,17 @@
         <div id="map"></div>
         <div class="map-overlay top">
             <label for="route">Select a Route</label>
-            <select id="select-element" name="route" default='1' onchange="run()">
+            <select id="select-element" name="route" default='1' onchange="upDate()">
                 <option value='1'>Line 1</option>
                 <option value="Orange">Orange Line</option>
                 <option value="Red">Red Line</option>
                 <option value="Blue">Blue Line</option>
+                <option value="1,Orange,Red,Blue">All</option>
             </select>
         </div>  
-        <script src="./script.js"></script>
-         <div class="alert-element">
+           <div class="alert-element nowrap">
             <div id="alert"><span class="nowrap">alert</span></div> 
-         </div>
+          </div>
+          <script src="./script.js"></script>
     </body>
 </html>
