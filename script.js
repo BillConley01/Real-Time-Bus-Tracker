@@ -1,6 +1,6 @@
 mapboxgl.accessToken = 'pk.eyJ1IjoiY29ubGV5d2lsbGlhbTAwMSIsImEiOiJja3VzdzFrY28zbmFvMm9vZmkwNzgyYWcxIn0.mjgxTjNrcX-MbJEsLxoenQ';
 
-//gloabl variable to allow setting the routes to view on the map
+//global variable to allow setting the routes to view on the map
 let currentRouteID = '';
 //global map variable to display Boston
 let map = new mapboxgl.Map({
@@ -29,6 +29,7 @@ function getURL(){
     let routeID = getRouteID();
     return 
 }
+
 // Request bus data from MBTA
 async function getBusLocations(){
     //let routeID = document.getElementById("select-element").value;
@@ -37,6 +38,7 @@ async function getBusLocations(){
     const json     = await response.json();
     return json.data;
 }
+
 // Request alert data from MBTA
 async function getAlerts(){
     //let routeID = document.getElementById("select-element").value;
@@ -45,6 +47,7 @@ async function getAlerts(){
     const json     = await response.json();
     return json.data;
 }
+
 // Display alerts
 async function displayAlerts(){
     const routeAlerts = await getAlerts();
@@ -57,18 +60,6 @@ async function displayAlerts(){
         {
             msg  += `${routeAlerts[i].attributes.header}       `;
         }
-        
-       /* if(characterCount>400){
-        banner.style.animationDuration = 90 + 's';
-        }
-        else if(200<=characterCount<=400){
-            banner.style.animationDuration = 60 + 's';
-
-        }
-        else {
-            banner.style.animationDuration = 30 + 's';
-
-        }*/
         setAlertBanner(msg);
     }
 }
@@ -84,8 +75,8 @@ async function setAlertBanner(msg){
     banner.innerHTML=  `${msg}`;
     console.log("Characters " + characterCount + " Width " + banner.offsetWidth + " Duration" + duration);
     return banner;
-
 }
+
 async function displayMarkers(){
     // get bus data
    const locations = await getBusLocations();
@@ -136,7 +127,6 @@ async function displayMarkers(){
         }
         currentRouteID =  routeID;
     }
-
 }
 
 async function runAlerts(){
