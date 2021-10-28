@@ -1,10 +1,11 @@
 body { margin: 0; padding: 0; }
-#map { position: absolute; left: 5%;top: 5%; width: 90%; height: 70%}
+#map { position: absolute; left: 5%;top: 5%; width: 90%; height: 80%}
 .map-overlay{
   position: absolute;
   left: 12%;
   top:7%;
   padding: 10px;
+  padding-bottom: !4px;
   background-color: lightcyan;
   text-shadow: 0.5px 0.5px 1px black;
   color:darkcyan;
@@ -21,7 +22,7 @@ label {
     display: block;
     position: absolute;
     left: 5%;
-    top:68%;
+    top:78%;
     padding:0;
     padding-right:0;
 background-color: lightcyan;
