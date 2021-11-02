@@ -1,4 +1,4 @@
-<h1>Real Time Bus Tracker With Javascript ES6</h1>
+# Real Time Bus Tracker With Javascript ES6
 <p>This code provides real time information for four Boston bus lines. This code originate from an assignment in Week #8 of MIT's MERN Coding Bootcamp. The challenge was to animate and add features to a map view of a Boston bus route.</p>
 <img src="./busroute.jpg"/>
 <h2>API Links</h2>
