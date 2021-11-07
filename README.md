@@ -18,7 +18,7 @@
 <li>Fork a Copy of this project to your Github page</li>
 <li>Clone a copy from your Github page to your local work environment</li>
 <li>Create an account at MapBox using this link <a href="https://www.mapbox.com/maps">MapBox</a> </li>
-<li>use this link to open an account or retrieve a token there to use without an account<a href="https://api-v3.mbta.com/">Massachusetts Bay Transportation Authority (MBTA)</a></li>
+<li>Use this link to open an account or retrieve a token there to use without an account<a href="https://api-v3.mbta.com/">Massachusetts Bay Transportation Authority (MBTA)</a></li>
 <li>Past your two keys in the proper locations in the script file</li>
 <li>Open the index file using a browser</li>
 <li>Select from one of four routes from the selectormenu on the top left side of the web page</li>
