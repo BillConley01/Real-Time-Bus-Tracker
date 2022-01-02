@@ -12,6 +12,8 @@
 <li>Pop up messages with bus information added to each bus marker. (Clicking on the marker opens mesage box)</li>
 <li>Custom colors were added to differentiate each bus route</li>
 <li>Added an Alert banner towards bottom of Map for messages</li>
+<li>Zoom controls added</li>
+<li>Compas controls added</li>
 </ol>
 <h2>How to Use</h2>
 <ol>
