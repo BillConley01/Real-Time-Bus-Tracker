@@ -5,7 +5,7 @@
 <ul>
   <li> <a href="https://api-v3.mbta.com/">Massachusetts Bay Transportation Authority (MBTA)</a></li>
 <li><a href="https://www.mapbox.com/maps">MapBox</a></li>
-  <li><a href=" https://billconley01.github.io/Real-Time-Bus-Tracker/">See Tracker in Action</a></li>
+  <li><a href="https://billconley01.github.io/Real-Time-Bus-Tracker">See Tracker in Action</a></li>
  
 </ul>
 <h2>Features</h2>
