@@ -1,51 +1,64 @@
-body { margin: 0; padding: 0; }
-#map { position: absolute; left: 5%;top: 5%; width: 90%; height: 80%}
-.map-overlay{
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  background-image: linear-gradient(to bottom right, #c1e7e3, #dcfffb);
+  background-attachment: fixed;
+  background-origin: inital;
+  background-repeat: no repeat;
+}
+#map {
+  position: absolute;
+  left: 5%;
+  top: 5%;
+  width: 90%;
+  height: 85%;
+}
+.map-overlay {
   position: absolute;
   left: 12%;
-  top:7%;
+  top: 7%;
   padding: 10px;
-  background-color: lightcyan;
+  background-color: #c1e7e3;
   text-shadow: 0.5px 0.5px 1px black;
-  color:darkcyan;
+  color: darkcyan;
 }
 option {
-    text-align: right;
-
+  text-align: right;
 }
 label {
-    text-align: left;
-    padding-right: 5px;
+  text-align: left;
+  padding-right: 5px;
 }
-.alert-element{
-    display: block;
-    position: absolute;
-    left: 5%;
-    top:78%;
-    padding:0;
-    padding-right:0;
-background-color: lightcyan;
-width:90%;
-overflow: hidden;
+.alert-element {
+  display: block;
+  position: absolute;
+  left: 5%;
+  top: 90%;
+  padding: 0;
+  padding-right: 0;
+  background-color: #c1e7e3;
+  width: 90%;
+  overflow: hidden;
 }
-#alert{
-    font-size: 20px;
-    color: red;
-    display: block;
-    white-space:nowrap;
-    width:90%;
-    text-shadow: 0.5px 0.5px 1px black;
-    
+#alert {
+  font-size: 20px;
+  color: red;
+  display: block;
+  white-space: nowrap;
+  width: 90%;
+  text-shadow: 0.5px 0.5px 1px black;
 }
-  
+
 @keyframes slide {
-    0% {
-        margin-left: 100%;
-        width: 100%;
-      }
-    
-     100% {
-        margin-left: -100%;
-        width: 100%;
-      }
+  0% {
+    margin-left: 100%;
+    width: 100%;
+  }
+
+  100% {
+    margin-left: -100%;
+    width: 100%;
+  }
 }
